@@ -1,4 +1,5 @@
 'use strict';
+
 {
     function setTheme(mode) {
         if (mode !== "light" && mode !== "dark" && mode !== "auto") {
@@ -35,12 +36,12 @@
     }
 
     function initTheme() {
-        // set theme defined in localStorage if there is one, or fallback to auto mode
+        // Set theme defined in localStorage if there is one, or fallback to auto mode
         const currentTheme = localStorage.getItem("theme");
-        currentTheme ? setTheme(currentTheme) : setTheme("auto");
+        setTheme(currentTheme || "auto");
     }
 
-    window.addEventListener('load', function(_) {
+    window.addEventListener('load', function() {
         const buttons = document.getElementsByClassName("theme-toggle");
         Array.from(buttons).forEach((btn) => {
             btn.addEventListener("click", cycleTheme);

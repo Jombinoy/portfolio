@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Success</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #fbc2eb, #a6c0fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .message-box {
+            background: #fff;
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideIn 1s ease-out;
+            width: 90%;
+            max-width: 500px;
+        }
+        .message-box h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #4caf50;
+        }
+        .message-box p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #555;
+        }
+        .message-box a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .message-box a:hover {
+            background: #4caf50;
+            color: #fff;
+            border-color: #4caf50;
+        }
+        .icon {
+            font-size: 60px;
+            color: #4caf50;
+            margin-bottom: 20px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <i class="fas fa-check-circle icon"></i>
+        <h1>Success!</h1>
+        <p>Your message has been sent successfully. Thank you for reaching out to me. I will get back to you soon.</p>
+        <a href="{% url 'index' %}">Back to Home Page</a>
+    </div>
+</body>
+</html>

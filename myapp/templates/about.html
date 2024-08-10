@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Website About Us Page HTML CSS</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        body {
+            background: #f4f4f9;
+        }
+
+        .about-us {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            padding: 90px 0;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pic {
+            height: auto;
+            width: 400px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .pic:hover {
+            transform: scale(1.05);
+        }
+
+        .about {
+            width: 1130px;
+            max-width: 85%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .text {
+            width: 540px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .text:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.05);
+        }
+
+        .text h2 {
+            color: #333;
+            font-size: 90px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: colorChange 5s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% { color: #333; }
+            50% { color: #4070f4; }
+            100% { color: #333; }
+        }
+
+        .text h5 {
+            color: #333;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .text h5 span {
+            color: #4070f4;
+        }
+
+        .text p {
+            color: #333;
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: 1px;
+        }
+
+        .data {
+            margin-top: 30px;
+        }
+
+        .hire {
+            font-size: 18px;
+            background: #4070f4;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            transition: background 0.5s ease;
+            margin-right: 10px;
+        }
+
+        .hire:hover {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <section class="about-us">
+        <div class="about">
+            <img src="{% static 'img/33.jpeg' %}" class="pic" alt="Profile Picture">
+            <div class="text">
+                <h2>About Me</h2>
+                <h5>Front-end Developer <span>Designer</span></h5>
+                <p>As a recent MCA graduate, I’m passionate about leveraging my skills in Java, Python, and SQL to drive innovation in technology. My academic journey has equipped me with a strong foundation in software development and problem-solving. I’m eager to apply my knowledge in a dynamic environment where I can contribute to impactful projects and continue to grow professionally.</p>
+                <div class="data">
+                    <a href="{% url 'hire_me' %}" class="hire">Hire Me</a>
+                    <a href="{% url 'resume_page' %}" class="hire">Resume</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Experience</title>
+    <style>
+        /* Reset margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .academics {
+            position: relative;
+            padding: 100px 0;
+            background: linear-gradient(
+                rgba(255, 192, 203, 0.6), /* Rose color with opacity */
+                rgba(255, 192, 203, 0.6)
+            ), url('https://camo.githubusercontent.com/7de37139d0b4c1ce40865e799b446c0e963a3dd8fb68d239707237c40604fa3d/68747470733a2f2f63646e2e6472696262626c652e636f6d2f75736572732f3733303730332f73637265656e73686f74732f363538313234332f6176656e746f2e676966') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed; /* Keeps background fixed while scrolling */
+            color: #000; /* Changes text color to black */
+            text-align: center; /* Centers text inside the section */
+        }
+        
+        .academics .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px); /* Increased floating distance */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .academics .timeline {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .academics .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: #EF233C;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .academics .timeline .timeline-item {
+            position: relative;
+            width: 50%;
+            margin-bottom: 40px;
+            animation: float 3s ease-in-out infinite; /* Faster floating animation */
+        }
+
+        .academics .timeline .timeline-item.left {
+            left: 0;
+            padding-right: 20px;
+        }
+
+        .academics .timeline .timeline-item.right {
+            left: 50%;
+            padding-left: 20px;
+        }
+
+        .academics .timeline .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            background: #ffffff;
+            border: 3px solid #EF233C;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .academics .timeline .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .academics .timeline .timeline-item.left::after {
+            right: -10px;
+        }
+
+        .academics .timeline .timeline-text {
+            padding: 20px;
+            position: relative;
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .academics .timeline .timeline-text h2 {
+            margin: 0 0 8px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .academics .timeline .timeline-text h4 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .academics .timeline .timeline-text p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Custom Colors for Timeline Items */
+        .academics .timeline .timeline-item.color-1 .timeline-text {
+            border-color: #00acc1;
+        }
+
+        .academics .timeline .timeline-item.color-2 .timeline-text {
+            border-color: #f06292;
+        }
+
+        .academics .timeline .timeline-item.color-3 .timeline-text {
+            border-color: #7e57c2;
+        }
+
+        .academics .timeline .timeline-item.color-4 .timeline-text {
+            border-color: #43a047;
+        }
+
+        .academics .timeline .timeline-item.color-5 .timeline-text {
+            border-color: #fdd835;
+        }
+
+        /* Hover Effects */
+        .academics .timeline .timeline-item.color-1:hover .timeline-text {
+            background: #e0f7fa;
+            border-color: #00796b;
+        }
+
+        .academics .timeline .timeline-item.color-2:hover .timeline-text {
+            background: #fce4ec;
+            border-color: #c2185b;
+        }
+
+        .academics .timeline .timeline-item.color-3:hover .timeline-text {
+            background: #d1c4e9;
+            border-color: #5e35b1;
+        }
+
+        .academics .timeline .timeline-item.color-4:hover .timeline-text {
+            background: #a5d6a7;
+            border-color: #2c6b2f;
+        }
+
+        .academics .timeline .timeline-item.color-5:hover .timeline-text {
+            background: #fff9c4;
+            border-color: #fbc02d;
+        }
+
+        @media (max-width: 767.98px) {
+            .academics .timeline::after {
+                left: 10px;
+            }
+
+            .academics .timeline .timeline-item {
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+                animation: float 3s ease-in-out infinite; /* Faster floating animation */
+            }
+
+            .academics .timeline .timeline-item.left,
+            .academics .timeline .timeline-item.right {
+                left: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .academics .timeline .timeline-item.left::after,
+            .academics .timeline .timeline-item.right::after {
+                left: 10px;
+            }
+
+            .academics .timeline .timeline-item.left::before,
+            .academics .timeline .timeline-item.right::before {
+                left: 22px;
+                border-color: transparent #dddddd transparent transparent;
+            }
+
+            .academics .timeline .timeline-item.left .timeline-date,
+            .academics .timeline .timeline-item.right .timeline-date {
+                position: relative;
+                top: 0;
+                left: 0;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            .academics .timeline .timeline-item.left .timeline-text,
+            .academics .timeline .timeline-item.right .timeline-text {
+                border-right: none;
+                border-left: 5px solid #dddddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Academics Section Start -->
+    <div class="academics" id="academics">
+        <div class="container">
+            <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <h1>  My Academic Journey</h1><br><br>
+            </header>
+            <div class="timeline">
+                <div class="timeline-item left color-1 wow slideInLeft" data-wow-delay="0.5s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <h2>MASTER OF COMPUTER APPLICATIONS</h2>
+                        <h4>ST JOSEPH COLLEGE OF ENGINEERING AND TECHNOLOGY, PALAI</h4>
+                        <p>
+                            Studied various aspects of computer science, including programming, algorithms, and data structures.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item right color-2 wow slideInRight" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2019 - 2022</div>
+                        <h2>BACHELOR OF COMPUTER APPLICATIONS</h2>
+                        <h4>MAR AUGUSTHINOSE COLLEGE, RAMAPURAM</h4>
+                        <p>
+                            Specialized in data analysis, machine learning, and artificial intelligence.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item left color-3 wow slideInLeft" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2018 - 2019</div>
+                        <h2>12TH</h2>
+                        <h4>ST MICHAEL'S HIGHER SECONDARY SCHOOL, KADUTHURUTHY</h4>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item right color-4 wow slideInRight" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2015 - 2016</div>
+                        <h2>10TH</h2>
+                        <h4>ST THOMAS HIGH SCHOOL, MARAGATUPILLY</h4>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Academics Section End -->
+</body>
+</html>

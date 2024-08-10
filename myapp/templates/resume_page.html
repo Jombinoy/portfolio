@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Resume Page</title>
+    <style>
+        /* Add your internal CSS here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .resume-page {
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .resume-button {
+            display: inline-block;
+            font-size: 18px;
+            background: #4070f4;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .resume-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .hire-container {
+            margin-top: 20px;
+        }
+
+        .hire {
+            font-size: 18px;
+            background: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .hire:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-page">
+        <h1>Download My Resume</h1>
+        <a href="{% static 'resumes/JOM_BINOY.pdf' %}" class="resume-button" target="_blank">View Resume</a>
+        <div class="hire-container">
+            <a href="{% url 'hire_me' %}" class="hire">Hire Me</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Me</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        /* Form Styles */
+        .hire-form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .hire-form:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .form-group .form-check {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group .form-check label {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .form-group .form-check input {
+            margin-right: 10px;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .form-group button:active {
+            transform: scale(1);
+        }
+    </style>
+    <script>
+        function toggleBondYears() {
+            var bondCheckbox = document.getElementById('bond');
+            var bondYearsField = document.getElementById('bond_years_field');
+            if (bondCheckbox.checked) {
+                bondYearsField.style.display = 'block';
+            } else {
+                bondYearsField.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Hire Me Form</h1>
+    <form method="post" action="{% url 'hire_me' %}" class="hire-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required>
+        </div>
+        <div class="form-group">
+            <label for="salary_offering">Salary Offering:</label>
+            <input type="number" id="salary_offering" name="salary_offering" step="0.01" required>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" id="bond" name="bond" onclick="toggleBondYears()">
+            <label for="bond">Is there any bond?</label>
+        </div>
+        <div class="form-group" id="bond_years_field" style="display: none;">
+            <label for="bond_years">If yes, how many years?</label>
+            <input type="number" id="bond_years" name="bond_years" step="1" min="1">
+        </div>
+        <div class="form-group">
+            <label for="your_name">Your Name:</label>
+            <input type="text" id="your_name" name="your_name" required>
+        </div>
+        <div class="form-group">
+            <label for="contact_no">Contact No:</label>
+            <input type="text" id="contact_no" name="contact_no" required>
+        </div>
+        <div class="form-group">
+            <label for="email_id">Your Email ID:</label>
+            <input type="email" id="email_id" name="email_id" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

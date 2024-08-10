@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-dz&vf7g$3(um8kzysq#azqs=*xqb750ky@&#d0&i#2^!y!qten
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*',
+]
 
 
 # Application definition
@@ -133,3 +135,6 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+
+CSRF_TRUSTED_ORIGINS = ['https://f1d48346c33999.lhr.life']

@@ -137,4 +137,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
-CSRF_TRUSTED_ORIGINS = ['https://f1d48346c33999.lhr.life']
+CSRF_TRUSTED_ORIGINS = ['https://2fbb26f7d0d57d.lhr.life']
